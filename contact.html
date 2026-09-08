@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — DBrodeur Concepts</title>
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="honeycomb-bg">
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="brand-mark">
+      <img src="images/logo.png" alt="DBrodeur Concepts logo">
+      <div>
+        DBrodeur Concepts
+        <div class="sub">ART &nbsp;·&nbsp; DESIGN &nbsp;·&nbsp; CONCEPTS</div>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="commissions.html">Commissions</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding: 70px 0 50px;">
+  <div class="wrap">
+    <div class="kicker">Contact</div>
+    <h1 style="font-size: clamp(2rem, 4vw, 3rem);">Say hello, or send a reference.</h1>
+  </div>
+</section>
+
+<section style="padding-top: 30px;">
+  <div class="wrap">
+    <div class="contact-block">
+
+      <!-- FORM NOTE: this uses a plain mailto: submit, so it opens the
+           visitor's email app with the message pre-filled — no account,
+           subscription, or backend needed. Replace YOUR-EMAIL@DBrodeur.com
+           below with your real inbox. If you'd rather messages land as a
+           proper web form submission later, Formspree has a free tier
+           (no paid plan required) you can swap the form action to. -->
+
+      <form action="mailto:YOUR-EMAIL@DBrodeur.com" method="post" enctype="text/plain">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="Name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required>
+        </div>
+        <div class="field">
+          <label for="reason">What's this about?</label>
+          <select id="reason" name="Reason">
+            <option>Commission inquiry</option>
+            <option>Question about a piece</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid">Send message</button>
+      </form>
+
+      <p class="small-note" style="margin-top: 28px;">Prefer to reach out directly? Add your Instagram, Etsy, or eBay links here once you've got them handy.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <img src="images/signature.png" alt="DBC signature" class="sig">
+      <div class="footer-links">
+        <a href="shop.html">Shop</a>
+        <a href="commissions.html">Commissions</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-note">&copy; 2026 DBrodeur Concepts. All artwork original.</div>
+  </div>
+</footer>
+
+</body>
+</html>
