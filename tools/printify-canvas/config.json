@@ -1,0 +1,20 @@
+{
+  "shop_id": null,
+  "blueprint_id": 1159,
+  "print_provider_id": null,
+  "print_on_side": "mirror",
+  "families": {
+    "2:3": {"ratio": 1.5, "tolerance": 0.08, "sizes": [[12, 18], [24, 36]]},
+    "4:5": {"ratio": 1.25, "tolerance": 0.08, "sizes": [[16, 20], [24, 30]]}
+  },
+  "prices": {
+    "12x18": 79.0,
+    "24x36": 169.0,
+    "16x20": 89.0,
+    "24x30": 159.0
+  },
+  "title_word": "Canvas",
+  "extra_tags": ["canvas", "stretched canvas", "ready to hang"],
+  "description_prefix": "<p><strong>Gallery-wrapped stretched canvas, 1.25\" deep, arrives ready to hang — no frame needed.</strong></p>",
+  "canvas_blueprint_ids_to_skip": []
+}
