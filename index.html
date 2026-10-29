@@ -1,123 +1,265 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DBrodeur Concepts — Art. Design. Concepts.</title>
-<meta name="description" content="Original AI-assisted art, personalized portraits, and wall pieces from DBrodeur Concepts. No genre, no medium, no boundaries.">
-<link rel="icon" href="images/logo.png">
-<link rel="stylesheet" href="style.css">
-</head>
-<body class="hex-bg-photo">
+<title>David Brodeur Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="David Brodeur: e-commerce operator and AI-directed designer. Storefront builds, catalog operations and creative work for DBrodeur Concepts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one dark gallery wall in the DBrodeur charcoal/gold system. Hero states the offer, work leads, proof follows. */
+:root{
+  --bg:#141210; --surface:#1d1a17; --line:#35302a; --fg:#ece6dc; --muted:#a59d90;
+  --gold:#c9a24a; --gold-soft:#e2c27a;
+  --display:"Abril Fatface", "Playfair Display", Georgia, serif;
+  --body:"Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){
+  --bg:#f4f0e8; --surface:#ebe5da; --line:#d4cbbb; --fg:#1d1a16; --muted:#62594c; --gold:#8a6a1f; --gold-soft:#6e5416; color-scheme:light } }
+:root[data-theme="light"]{ --bg:#f4f0e8; --surface:#ebe5da; --line:#d4cbbb; --fg:#1d1a16; --muted:#62594c; --gold:#8a6a1f; --gold-soft:#6e5416; color-scheme:light }
 
-<header class="site-header">
-  <div class="nav-inner">
-    <a href="index.html" class="brand-mark">
-      <img src="images/logo.png" alt="DBrodeur Concepts logo">
-      <div>
-        DBrodeur Concepts
-        <div class="sub">ART &nbsp;·&nbsp; DESIGN &nbsp;·&nbsp; CONCEPTS</div>
-      </div>
-    </a>
-    <nav class="main-nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="commissions.html">Commissions</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);
+  padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto}
+a{color:var(--gold-soft);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.05}
+.label{font:500 .75rem/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+p{margin:0}
+
+/* hero */
+.hero{position:relative;padding-block:72px 56px;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16zM28 64v33M0 48L-28 64M56 48l28 16' fill='none' stroke='%23c9a24a' stroke-opacity='.13'/%3E%3C/svg%3E");
+  -webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 100%);mask-image:linear-gradient(90deg,transparent 30%,#000 100%)}
+.hero .wrap{position:relative;display:grid;gap:28px}
+.hero h1{font-size:clamp(2.8rem,8vw,5.6rem)}
+.hero h1 span{color:var(--gold)}
+.lede{font-size:clamp(1.05rem,2.2vw,1.3rem);max-width:38ch;color:var(--fg)}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;font:400 .85rem/1.4 var(--mono);color:var(--muted)}
+.facts b{color:var(--fg);font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 18px;border:1px solid var(--gold);color:var(--gold-soft);text-decoration:none;font:500 .85rem var(--mono);letter-spacing:.06em}
+.btn.solid{background:var(--gold);color:#141210}
+
+section{padding-block:64px;border-bottom:1px solid var(--line)}
+.head{display:grid;gap:10px;margin-bottom:32px;max-width:62ch}
+.head h2{font-size:clamp(2rem,5vw,3rem)}
+.head p{color:var(--muted)}
+
+/* galleries */
+.sub{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:40px 0 14px}
+.sub:first-of-type{margin-top:0}
+.sub h3{font-size:1.5rem}
+.sub p{color:var(--muted);font-size:.9rem;max-width:52ch}
+.grid{display:grid;gap:14px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+figure{margin:0;min-width:0}
+figure img{display:block;width:100%;height:auto;background:var(--surface)}
+.sq img{aspect-ratio:1/1;object-fit:cover}
+figcaption{font-size:.82rem;color:var(--muted);margin-top:8px;line-height:1.4}
+figcaption b{display:block;color:var(--fg);font-weight:600}
+.feature{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;align-items:start}
+.feature figure:first-child img{aspect-ratio:auto}
+.note{margin-top:22px;font-size:.85rem;color:var(--muted);border-left:2px solid var(--gold);padding-left:12px;max-width:70ch}
+
+/* case studies */
+.cases{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+.case{background:var(--surface);border:1px solid var(--line);padding:24px;display:grid;gap:14px;align-content:start;min-width:0}
+.case h3{font-size:1.45rem}
+.case dl{margin:0;display:grid;gap:12px}
+.case dt{font:500 .7rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.case dd{margin:2px 0 0;font-size:.93rem}
+
+/* method + tools */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+ol.method{margin:0;padding:0;list-style:none;counter-reset:m;display:grid;gap:10px}
+ol.method li{counter-increment:m;display:grid;grid-template-columns:2.2rem 1fr;gap:8px;align-items:baseline;padding-bottom:10px;border-bottom:1px solid var(--line)}
+ol.method li::before{content:counter(m,decimal-leading-zero);font:500 .8rem var(--mono);color:var(--gold)}
+.tools{display:grid;gap:20px}
+.tier h3{font:600 .95rem var(--body);margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{border:1px solid var(--line);padding:4px 10px;font-size:.82rem}
+.tier.top .chips span{border-color:var(--gold);color:var(--fg)}
+
+/* storefronts + contact */
+.stores{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.store{border:1px solid var(--line);padding:20px;display:grid;gap:6px;text-decoration:none;color:var(--fg)}
+.store:hover{border-color:var(--gold)}
+.store b{font-family:var(--display);font-weight:400;font-size:1.35rem}
+.store span{font-size:.85rem;color:var(--muted)}
+footer{padding-block:56px 72px;display:grid;gap:14px}
+footer h2{font-size:clamp(2rem,5vw,3rem)}
+.mail{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.mail code{font:500 1rem var(--mono);color:var(--gold-soft);user-select:all}
+.mail button{background:none;border:1px solid var(--line);color:var(--fg);font:500 .75rem var(--mono);padding:6px 10px;cursor:pointer}
+
+@media (max-width:900px){
+  .g4{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(2,1fr)}
+  .feature{grid-template-columns:1fr 1fr} .feature figure:first-child{grid-column:1/-1}
+  .cases{grid-template-columns:1fr} .stores{grid-template-columns:1fr 1fr} .split{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:420px){ .g3{grid-template-columns:1fr 1fr} .stores{grid-template-columns:1fr} section{padding-block:48px} .hero{padding-block:48px 40px} }
+@media (prefers-reduced-motion:no-preference){ figure img{transition:transform .4s ease} figure:hover img{transform:scale(1.015)} }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="label">Portfolio · Phoenix, AZ</span>
+    <h1>David <span>Brodeur</span></h1>
+    <p class="lede">I build and run online storefronts, and I direct AI to make the product, the brand and the content that fills them.</p>
+    <div class="facts">
+      <span><b>434</b> products live on Shopify</span>
+      <span><b>15</b> curated collections</span>
+      <span><b>3</b> storefronts: Shopify, Etsy, eBay</span>
+      <span><b>$0</b> inventory held</span>
+    </div>
+    <div class="cta">
+      <a class="btn solid" href="#work">See the work</a>
+      <a class="btn" href="#cases">How it was built</a>
+    </div>
   </div>
 </header>
 
-<section class="hero">
+<main>
+<section id="work">
   <div class="wrap">
-    <div class="kicker">Created to inspire. Designed to stand out.</div>
-    <h1>Art that doesn't ask permission to cross a boundary.</h1>
-    <p class="lede">DBrodeur Concepts is a working studio, not a lane. Portraits, wall pieces, prints, apparel &mdash; hand-built and AI-assisted, physical and digital, whatever the idea calls for.</p>
-    <div class="actions">
-      <a href="shop.html" class="btn btn-solid">Browse the shop</a>
-      <a href="commissions.html" class="btn">Start a commission</a>
+    <div class="head">
+      <span class="label">Selected work</span>
+      <h2>Brand, product and concept design</h2>
+      <p>Everything here was made for DBrodeur Concepts, my art and print-on-demand brand. Imagery is generated with AI tools under my direction, then built into products, listings and brand assets.</p>
     </div>
+
+    <div class="sub"><h3>Brand system</h3><p>One visual system for every collection: a charcoal honeycomb ground, a single hero object, a heavy serif title. Every new collection drops into the same system.</p></div>
+    <div class="grid g4 sq">
+      <figure><img src="img/col-takemeback.jpg" alt="Take Me Back collection tile: skateboard and bodega doorway breaking through a honeycomb wall" loading="lazy"></figure>
+      <figure><img src="img/col-readtheroom.jpg" alt="Read the Room collection tile: an open book breaking through a honeycomb wall" loading="lazy"></figure>
+      <figure><img src="img/col-celestial.jpg" alt="Celestial Deco collection tile: a gold armillary sphere around the moon" loading="lazy"></figure>
+      <figure><img src="img/col-channelzero.jpg" alt="Channel Zero collection tile: a vintage television showing static" loading="lazy"></figure>
+      <figure><img src="img/col-stateofmine.jpg" alt="State of Mine collection tile: a glowing gold map of the United States" loading="lazy"></figure>
+      <figure><img src="img/col-lookcloser.jpg" alt="Look Closer collection tile: a magnifying glass over the honeycomb" loading="lazy"></figure>
+      <figure><img src="img/col-weathered.jpg" alt="Weathered collection tile: a cracked, weathered wooden door" loading="lazy"></figure>
+      <figure><img src="img/col-backyard.jpg" alt="Backyard Legends collection tile: a worn basketball" loading="lazy"></figure>
+    </div>
+
+    <div class="sub"><h3>Concept and commercial design</h3><p>Self-initiated briefs that show range beyond wall art: a product ad, parody packaging and two large-scale concept pieces.</p></div>
+    <div class="feature">
+      <figure><img src="img/pixie-dust.jpg" alt="Concept ad for a fictional candy-colored hair dye called Pixie Dust" loading="lazy"><figcaption><b>Pixie Dust Hair Dye</b>Concept ad for a fictional brand: product, packaging, before and after, and benefit callouts.</figcaption></figure>
+      <figure><img src="img/spiritless-rideshare.jpg" alt="Spiritless parody costume package: New Year's Eve rideshare driver" loading="lazy"><figcaption><b>Spiritless</b>Parody costume packaging series built on everyday workplace misery.</figcaption></figure>
+      <figure><img src="img/piece-by-piece.jpg" alt="An artist tiling a giant mosaic portrait on a city rooftop" loading="lazy"><figcaption><b>Piece by Piece</b>Concept piece: a mosaic mural being built in place.</figcaption></figure>
+    </div>
+
+    <div class="sub"><h3>Product art</h3><p>A cross-section of the catalog, shown as listed. Each line has its own look: storms, cyberpunk robots, dark academia, city youth, autumn horror.</p></div>
+    <div class="grid g4 sq">
+      <figure><img src="img/watchers-road.jpg" alt="Watchers: The Road, autumn mountain road at dusk" loading="lazy"><figcaption><b>Watchers: The Road</b>Look Closer</figcaption></figure>
+      <figure><img src="img/coin-a-phase.jpg" alt="Coin a Phase, a small robot in a late-night laundromat" loading="lazy"><figcaption><b>Coin a Phase</b>ChannelZero</figcaption></figure>
+      <figure><img src="img/card-catalog.jpg" alt="Card Catalog, a brass library drawer under a green lamp" loading="lazy"><figcaption><b>Card Catalog</b>Read the Room</figcaption></figure>
+      <figure><img src="img/escape-reality.jpg" alt="Escape Reality, friends on a fire escape over a city skyline" loading="lazy"><figcaption><b>Escape Reality</b>Take Me Back</figcaption></figure>
+      <figure><img src="img/the-strike.jpg" alt="The Strike, a lightning bolt over a dark ridge" loading="lazy"><figcaption><b>The Strike</b>Weathered</figcaption></figure>
+      <figure><img src="img/orrery.jpg" alt="Orrery Rotunda, a brass orrery under a domed skylight" loading="lazy"><figcaption><b>Orrery Rotunda</b>Celestial Deco</figcaption></figure>
+      <figure><img src="img/alarm-808.jpg" alt="8:08 alarm clock with a broken heart" loading="lazy"><figcaption><b>8:08 Broken Heart</b>Off the Record</figcaption></figure>
+      <figure><img src="img/desert-diamond.jpg" alt="Desert Diamond, kids playing baseball on a desert sandlot at sunset" loading="lazy"><figcaption><b>Desert Diamond</b>Backyard Legends</figcaption></figure>
+    </div>
+
+    <div class="sub"><h3>Personalized and physical products</h3><p>Formats beyond the standard print: a made-to-order hometown map, a 50-state map series and a holographic sticker line.</p></div>
+    <div class="grid g3 sq">
+      <figure><img src="img/hometown-map.jpg" alt="Personalized hometown map of Millis, Massachusetts" loading="lazy"><figcaption><b>Personalized Hometown Map</b>Made to order around the buyer's own town.</figcaption></figure>
+      <figure><img src="img/arizona-map.jpg" alt="Arizona state map poster in gold on black" loading="lazy"><figcaption><b>State of Mine</b>58 products covering all 50 states plus territories.</figcaption></figure>
+      <figure><img src="img/sticker-808.jpg" alt="Holographic 8:08 neon broken heart sticker" loading="lazy"><figcaption><b>Holographic Stickers</b>Art pieces adapted into a low-price entry product.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Case studies</span>
+      <h2>How the business was built</h2>
+      <p>The work behind the gallery: setup, structure and decisions, with what came of each.</p>
+    </div>
+    <div class="cases">
+      <article class="case">
+        <h3>From a free static site to three storefronts</h3>
+        <dl>
+          <div><dt>Problem</dt><dd>Sell art with no budget for a developer, platform fees or stock.</dd></div>
+          <div><dt>Approach</dt><dd>Launched a free GitHub Pages site on my own domain with branded email. When it needed real checkout and fulfillment, moved to Shopify connected to Printify, then added Etsy and eBay as separate Printify stores.</dd></div>
+          <div><dt>Result</dt><dd>One 434-product catalog sold across three channels, printed and shipped on demand, with nothing held in stock.</dd></div>
+        </dl>
+      </article>
+      <article class="case">
+        <h3>Restructuring an Etsy catalog</h3>
+        <dl>
+          <div><dt>Problem</dt><dd>Each artwork had separate listings for poster, canvas and framed, which cluttered the shop.</dd></div>
+          <div><dt>Approach</dt><dd>Piloted one listing per artwork with a Style dropdown on a single piece, reviewed it, then approved the rollout. Wrote operating rules for pricing floors, ad spend and keywords so the work could be delegated.</dd></div>
+          <div><dt>Result</dt><dd>A cleaner shop structure and a repeatable rollout process with written guardrails.</dd></div>
+        </dl>
+      </article>
+      <article class="case">
+        <h3>A one-person AI production pipeline</h3>
+        <dl>
+          <div><dt>Problem</dt><dd>Produce a large, consistent catalog and brand system alone.</dd></div>
+          <div><dt>Approach</dt><dd>Tested image tools side by side and kept the one that held my intent. Built a prompt-generator tool and a shared visual template for every collection. Made my own room mockups for the state-map series.</dd></div>
+          <div><dt>Result</dt><dd>Fifteen collections under one consistent brand look, produced and listed by one person.</dd></div>
+        </dl>
+      </article>
+    </div>
+    <p class="note">The storefronts are new and still building traffic. These case studies show how they were set up and run; sales results will be added as they come in.</p>
   </div>
 </section>
 
 <section>
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Shop the collections</h2>
-      <p>Every piece lives in one of these lines &mdash; pick a lane and browse from there.</p>
-    </div>
-    <div class="collection-grid">
-
-      <a href="shop.html" class="collection-tile">
-        <img src="images/category-state-of-mine.jpg" alt="State of Mine collection badge">
-      </a>
-
-      <a href="shop.html" class="collection-tile">
-        <img src="images/category-read-the-room.jpg" alt="Read the Room collection badge">
-      </a>
-
-      <a href="shop.html" class="collection-tile">
-        <img src="images/category-channel-zero.jpg" alt="Channel Zero collection badge">
-      </a>
-
-      <a href="shop.html" class="collection-tile">
-        <img src="images/category-backyard-legends.jpg" alt="Backyard Legends collection badge">
-      </a>
-
-      <a href="shop.html" class="collection-tile">
-        <img src="images/category-weathered.webp" alt="Weathered collection badge">
-      </a>
-
-      <a href="shop.html" class="collection-tile">
-        <img src="images/category-off-the-record.webp" alt="Off the Record collection badge">
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<section class="alt">
   <div class="wrap split">
     <div>
-      <h2>One studio. No fixed lane.</h2>
-      <p style="margin-top:20px; color:var(--ivory-dim);">Some pieces start on canvas. Some start as a prompt. Some end up on a wall, some on a hoodie, some as a portrait of somebody's favorite record. DBrodeur Concepts doesn't narrow that down to one theme or one format &mdash; if the idea's good, the medium follows it, not the other way around.</p>
-      <div style="margin-top:32px;">
-        <a href="about.html" class="btn">Read the story</a>
-      </div>
+      <div class="head"><span class="label">Method</span><h2>How I work</h2></div>
+      <ol class="method">
+        <li><span>Define the goal and what's not working.</span></li>
+        <li><span>Name the constraints first: budget, platform, time.</span></li>
+        <li><span>Compare approaches before committing to one.</span></li>
+        <li><span>Use AI where it saves real effort, and keep judgment calls human.</span></li>
+        <li><span>Pilot on one item, check it, then roll it out.</span></li>
+        <li><span>Write it down so it repeats without me.</span></li>
+      </ol>
     </div>
     <div>
-      <img src="images/product-librarycard.jpg" alt="Vintage library due-date card, close-up detail">
+      <div class="head"><span class="label">Toolkit</span><h2>Tools I use</h2></div>
+      <div class="tools">
+        <div class="tier top"><h3>Daily, hands-on</h3><div class="chips"><span>Shopify</span><span>Etsy</span><span>eBay</span><span>Printify</span><span>ChatGPT</span><span>Claude</span><span>Canva</span></div></div>
+        <div class="tier"><h3>Set up and configured</h3><div class="chips"><span>GitHub Pages</span><span>Claude Code</span><span>DNS and email (Porkbun)</span><span>PayPal Business</span><span>Metricool</span><span>eBay Developer API</span><span>CardLuma</span></div></div>
+        <div class="tier"><h3>Working familiarity</h3><div class="chips"><span>Midjourney</span><span>Gemini</span><span>Pinterest</span><span>Instagram</span><span>TikTok</span><span>Excel</span><span>OBS Studio</span></div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="section-head">
-      <h2>Commission a portrait</h2>
-      <p>A one-of-one piece built around you &mdash; your style, your world, your reference.</p>
+    <div class="head"><span class="label">Live</span><h2>See it running</h2></div>
+    <div class="stores">
+      <a class="store" href="https://dbrodeur.com" target="_blank" rel="noopener"><b>dbrodeur.com</b><span>Shopify store, full catalog and brand</span></a>
+      <a class="store" href="https://www.etsy.com/shop/DBrodeurConcepts" target="_blank" rel="noopener"><b>Etsy</b><span>DBrodeurConcepts shop</span></a>
+      <a class="store" href="https://www.ebay.com/str/fenwaypacks" target="_blank" rel="noopener"><b>eBay</b><span>Fenway Packs resale store: trading cards and clothing</span></a>
+      <a class="store" href="https://dbrodeur.com/collections/portfolio" target="_blank" rel="noopener"><b>Portfolio collection</b><span>Showcase pieces on the store</span></a>
     </div>
-    <a href="commissions.html" class="btn btn-solid">See how it works</a>
   </div>
 </section>
+</main>
 
 <footer>
-  <div class="wrap">
-    <div class="footer-inner">
-      <img src="images/signature-gold.png" alt="DBC signature" class="sig">
-      <div class="footer-links">
-        <a href="shop.html">Shop</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="commissions.html">Commissions</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-    <div class="footer-note">&copy; 2026 DBrodeur Concepts. All artwork original.</div>
+  <div class="wrap" style="display:grid;gap:14px">
+    <span class="label">Contact</span>
+    <h2>Let's talk.</h2>
+    <p style="color:var(--muted);max-width:52ch">Open to e-commerce operations, AI-assisted content and digital operations roles.</p>
+    <div class="mail"><code id="email">david@dbrodeur.com</code><button id="copy" type="button">Copy</button></div>
   </div>
 </footer>
 
-</body>
-</html>
+<script>
+document.getElementById('copy').addEventListener('click', function(){
+  var b=this, t=document.getElementById('email');
+  function sel(){ var r=document.createRange(); r.selectNodeContents(t); var s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+  try{ navigator.clipboard.writeText(t.textContent).then(function(){ b.textContent='Copied'; }, function(){ sel(); b.textContent='Selected'; }); }
+  catch(e){ sel(); b.textContent='Selected'; }
+});
+</script>
